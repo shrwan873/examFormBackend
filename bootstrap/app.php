@@ -14,7 +14,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
          $middleware->alias([
             'role' => \App\Http\Middleware\RoleMiddleware::class,
-            'jwt.auth' => JwtAuthenticate::class,
+            'jwt.auth' => \App\Http\Middleware\JwtAuthenticate::class,
         ]);
     })
     ->withProviders([
