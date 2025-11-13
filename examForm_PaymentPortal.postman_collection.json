@@ -1,0 +1,539 @@
+{
+	"info": {
+		"_postman_id": "d26abbf6-ff60-4ba5-bb9b-bad7b66edb02",
+		"name": "examForm_PaymentPortal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50007433",
+		"_collection_link": "https://choudharyshrwan873-8860965.postman.co/workspace/2413a9af-34a8-4152-8b8e-b52f4d64ae3e/collection/50007433-d26abbf6-ff60-4ba5-bb9b-bad7b66edb02?action=share&source=collection_link&creator=50007433"
+	},
+	"item": [
+		{
+			"name": "Register user",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"User3\",\r\n    \"email\": \"user3@example.com\",\r\n    \"password\": \"user3123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/auth/register",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"email\": \"user1@example.com\",\r\n  \"password\": \"user123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/auth/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Current User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjI5NDY0MzEsImV4cCI6MTc2Mjk1MDAzMSwibmJmIjoxNzYyOTQ2NDMxLCJqdGkiOiJHS0RPeUFTRWVoMWRDaHo1Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.u0gstG_6kfdaU2IXIp7HrZelazpUiANI4E72KC2Qy1I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/auth/me",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"auth",
+						"me"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjI5NDY0MzEsImV4cCI6MTc2Mjk1MDAzMSwibmJmIjoxNzYyOTQ2NDMxLCJqdGkiOiJHS0RPeUFTRWVoMWRDaHo1Iiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.u0gstG_6kfdaU2IXIp7HrZelazpUiANI4E72KC2Qy1I",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/auth/logout",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"auth",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Forms User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjI5NDczOTYsImV4cCI6MTc2Mjk1MDk5NiwibmJmIjoxNzYyOTQ3Mzk2LCJqdGkiOiJISm5xSUpOb2dVbDEwWVNQIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.JFmu47RZYW_Fzjm-NRv4vzChfWV3X520k0CPUXco37Y",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/forms",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"forms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Forms Add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjI5NDc2NDksImV4cCI6MTc2Mjk1MTI0OSwibmJmIjoxNzYyOTQ3NjQ5LCJqdGkiOiIyY3lRRkdJY1Z3V2pkY3l1Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.VWugAbRGe7r31nUNhXIoaLBdOP5_4QKQFgRO0_BpRFs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"GATE 2025\",\r\n    \"description\": \"Graduate Aptitude Test\",\r\n    \"exam_date\": \"2025-11-20\",\r\n    \"fee\": 1200,\r\n    \"structure\": {\r\n        \"sections\": [\r\n            \"Maths\",\r\n            \"Reasoning\"\r\n        ]\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/forms",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"forms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Form Update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjI5NDc2NDksImV4cCI6MTc2Mjk1MTI0OSwibmJmIjoxNzYyOTQ3NjQ5LCJqdGkiOiIyY3lRRkdJY1Z3V2pkY3l1Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.VWugAbRGe7r31nUNhXIoaLBdOP5_4QKQFgRO0_BpRFs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"fee\": 1500,\r\n  \"exam_date\": \"2025-11-25\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/forms/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"forms",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Form Delete",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjI5NDc2NDksImV4cCI6MTc2Mjk1MTI0OSwibmJmIjoxNzYyOTQ3NjQ5LCJqdGkiOiIyY3lRRkdJY1Z3V2pkY3l1Iiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.VWugAbRGe7r31nUNhXIoaLBdOP5_4QKQFgRO0_BpRFs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/forms/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"forms",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Form Submission",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjI5NDgwNzgsImV4cCI6MTc2Mjk1MTY3OCwibmJmIjoxNzYyOTQ4MDc4LCJqdGkiOiJ4UmM0R2l4THJsS0FDZFJRIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5W01x7bdY-KuC5zHWOvSLu8vxfRbdm0WwBXYAICbHtI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"form_id\": 2,\r\n  \"answers\": {\r\n    \"name\": \"Ravi Kumar\",\r\n    \"roll_no\": \"JEE1234\",\r\n    \"center\": \"Delhi\"\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/submissions",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"submissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User Form Submission Check",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjI5NDgwNzgsImV4cCI6MTc2Mjk1MTY3OCwibmJmIjoxNzYyOTQ4MDc4LCJqdGkiOiJ4UmM0R2l4THJsS0FDZFJRIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5W01x7bdY-KuC5zHWOvSLu8vxfRbdm0WwBXYAICbHtI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/submissions/my",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"submissions",
+						"my"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Form Submissions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjI5NDg0MTEsImV4cCI6MTc2Mjk1MjAxMSwibmJmIjoxNzYyOTQ4NDExLCJqdGkiOiJ2QnJCMlZVeTFDcm9mZ1JQIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.vmgkh9Z1CmzbEWFTAk2v1xXh9xQhm7o-BQnk6a0Fo_E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/admin/submissions",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"admin",
+						"submissions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Admin Form Submissions Check",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjI5NDg0MTEsImV4cCI6MTc2Mjk1MjAxMSwibmJmIjoxNzYyOTQ4NDExLCJqdGkiOiJ2QnJCMlZVeTFDcm9mZ1JQIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.vmgkh9Z1CmzbEWFTAk2v1xXh9xQhm7o-BQnk6a0Fo_E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/admin/submissions/1",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"admin",
+						"submissions",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment Initiate",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjI5NDgwNzgsImV4cCI6MTc2Mjk1MTY3OCwibmJmIjoxNzYyOTQ4MDc4LCJqdGkiOiJ4UmM0R2l4THJsS0FDZFJRIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.5W01x7bdY-KuC5zHWOvSLu8vxfRbdm0WwBXYAICbHtI",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"submission_id\": 1,\r\n  \"gateway\": \"razorpay\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/payments/initiate",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"payments",
+						"initiate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment Confirm",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjI5NTE3MDksImV4cCI6MTc2Mjk1NTMwOSwibmJmIjoxNzYyOTUxNzA5LCJqdGkiOiJRb2dhN1pPdlFKNmpJdjJPIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.vfTWlmmgtTRwmqcMSzPzVqZpK8kqx3aPpbuFqtMHN30",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"payment_id\": 1,\r\n  \"transaction_id\": \"pay_JEE12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/payments/confirm",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"payments",
+						"confirm"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Payment Receipt",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjI5NTE3MDksImV4cCI6MTc2Mjk1NTMwOSwibmJmIjoxNzYyOTUxNzA5LCJqdGkiOiJRb2dhN1pPdlFKNmpJdjJPIiwic3ViIjoiMiIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.vfTWlmmgtTRwmqcMSzPzVqZpK8kqx3aPpbuFqtMHN30",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"payment_id\": 1,\r\n  \"transaction_id\": \"pay_JEE12345\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/payments/1/receipt",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"payments",
+						"1",
+						"receipt"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
